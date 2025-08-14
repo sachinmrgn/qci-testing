@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Contact Form</title>
+</head>
+<body>
+
+  <h2>Contact Information</h2>
+  <form id="contactForm">
+    <label>First Name:</label>
+    <input type="text" id="firstName" required><br><br>
+
+    <label>Last Name:</label>
+    <input type="text" id="lastName" required><br><br>
+
+    <label>Email:</label>
+    <input type="email" id="email" required><br><br>
+
+    <label>Alternate Contact Number:</label>
+    <input type="text" id="altContact"><br><br>
+
+    <label>Company Name:</label>
+    <input type="text" id="companyName"><br><br>
+
+    <label>Company Website:</label>
+    <input type="url" id="companyWebsite"><br><br>
+
+    <button type="button" onclick="submitContact()">Submit</button>
+  </form>
+
+  <script>
+    function submitContact() {
+      var new_contact = {
+        "First name": document.getElementById("firstName").value,
+        "Last name": document.getElementById("lastName").value,
+        "Email": document.getElementById("email").value,
+        "Alternate contact number": document.getElementById("altContact").value,
+        "company": {
+          "Name": document.getElementById("companyName").value,
+          "Website": document.getElementById("companyWebsite").value
+        }
+      };
+
+      // var identifier = new_contact["Email"];
+      fwcrm.identify("Email, new_contact);
+    }
+  </script>
+
+</body>
+</html>
